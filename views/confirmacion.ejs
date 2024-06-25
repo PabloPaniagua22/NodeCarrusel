@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación de Entrada</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Entrada Enviada</h1>
+  <p><strong>Título:</strong> <%= titulo %></p>
+  <p><strong>Comentario:</strong> <%= comentario %></p>
+  <% if (imagen) { %>
+    <p><strong>Imagen:</strong> <img src="/public/uploads/imagen %>" alt="Imagen"></p>
+  <% } %>
+  
+</body>
+</html>
+
+
+<p><a href="/">Volver al formulario</a></p>
+  <p><a href="/index">Volver a la página principal</a></p>

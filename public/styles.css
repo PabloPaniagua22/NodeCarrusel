@@ -1,0 +1,117 @@
+/* styles.css */
+
+/* Estilos básicos del cuerpo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1b2a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: url('img/Hero_Section_1.png') no-repeat center center/cover;
+}
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Sección de texto */
+.seccionTexto {
+    max-width: 40%;
+    text-align: start;
+    margin-right: 20px;
+}
+
+.seccionTexto h1 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.seccionTexto h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.seccionTexto p {
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.seccionTexto button {
+    background-color: #7c4dff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.seccionTexto button:hover {
+    background-color: #5e35b1;
+}
+
+/* Sección de imagen */
+.seccionImagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.seccionImagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilos del carrusel */
+.carousel {
+    position: relative;
+    max-width: 80%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-deslizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+/* Botones del carrusel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel.boton.Anterior {
+    left: 10px;
+}
+
+.carousel.boton.Siguiente{
+    right: 10px;
+}

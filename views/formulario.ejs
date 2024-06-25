@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Entrada</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Formulario de Entrada</h1>
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" name="titulo" required>
+    </div>
+    <div>
+      <label for="comentario">Comentario:</label>
+      <textarea id="comentario" name="comentario" rows="2" required></textarea>
+    </div>
+    <div>
+      <label for="imagen">Imagen:</label>
+      <input type="file" id="imagen" name="imagen">
+    </div>
+    <button type="index">Enviar</button>
+  </form>
+</body>
+</html>
