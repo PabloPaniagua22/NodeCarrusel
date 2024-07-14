@@ -1,0 +1,43 @@
+<!-- Este html lo que haces es traer todo la informacion de mi tabla y mostrarla en forma de tabla para editar, eliminar-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas</title>
+</head>
+<body>
+    <h1>Lista de Entradas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Comentario</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% entradas.forEach((entrada) => { %>
+                <tr>
+                    <td><%= entrada.id %></td>
+                    <td><%= entrada.titulo %></td>
+                    <td><%= entrada.comentario %></td>
+                    <td>
+                        <% if (entrada.imagen) { %>
+                            <img src="/uploads/<%= entrada.imagen %>" alt="<%= entrada.titulo %>" width="100">
+                        <% } %>
+                    </td>
+                    <td>
+                        <a href="/edit/<%= entrada.id %>">Editar</a>
+                        <a href="/delete/<%= entrada.id %>" onclick="return confirm('¿Estás seguro de que deseas eliminar esta entrada?');">Eliminar</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <a href="/">Volver al Formulario</a>
+    <a href="/index">Pagina Principal</a>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 // scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/api/entradas')

@@ -1,0 +1,29 @@
+<!--Este html, una vez estemos en la parte de entrada. Lo que hace es editar el titulo, comentario o imagen-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Entrada</title>
+</head>
+<body>
+    <h1>Editar Entrada</h1>
+    <form action="/update/<%= entrada.id %>" method="POST" enctype="multipart/form-data">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" value="<%= entrada.titulo %>" required>
+        <br>
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" required><%= entrada.comentario %></textarea>
+        <br>
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" name="imagen">
+        <% if (entrada.imagen) { %>
+            <p>Imagen actual: <img src="/uploads/<%= entrada.imagen %>" alt="<%= entrada.titulo %>" width="100"></p>
+            <input type="hidden" name="existingImagen" value="<%= entrada.imagen %>">
+        <% } %>
+        <br>
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="/entradas">Volver a Entradas</a>
+</body>
+</html>

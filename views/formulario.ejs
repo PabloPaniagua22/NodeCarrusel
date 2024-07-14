@@ -1,3 +1,4 @@
+<!--Formulario en el que el usuario ingresa el titulo, comentario y una imagen para enviarlo a la base de datos-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +8,7 @@
 </head>
 <body>
   <h1>Formulario de Entrada</h1>
-  <form action="/submit" method="POST" enctype="multipart/form-data">
+  <form action="/confirmacion" method="POST" enctype="multipart/form-data">
     <div>
       <label for="titulo">Título:</label>
       <input type="text" id="titulo" name="titulo" required>
@@ -22,5 +23,6 @@
     </div>
     <button type="index">Enviar</button>
   </form>
+  <a href="/entradas">Mostrar toda la base de datos</a>
 </body>
 </html>
