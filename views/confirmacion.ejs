@@ -11,12 +11,11 @@
   <p><strong>Título:</strong> <%= titulo %></p>
   <p><strong>Comentario:</strong> <%= comentario %></p>
   <% if (imagen) { %>
-    <p><strong>Imagen:</strong> <img src="/public/uploads/imagen %>" alt="Imagen"></p>
+    <p><strong>Imagen:</strong> <img src="/uploads/<%= imagen %>" alt="Imagen"></p>
   <% } %>
-  
+  <p><strong>Fecha de Agregado:</strong> <%= fecha_agregado %></p>
 </body>
 </html>
-
 
 <p><a href="/">Volver al formulario</a></p>
 <p><a href="/entradas">Ir a todos los posteos</a></p>

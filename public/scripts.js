@@ -14,11 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="carousel-contenedor">
                     <div class="contenedor">
                         <div class="seccionTexto">
-                        <h1>CONECTAR LAB CHACO</h1>
+                            <h1>CONECTAR LAB CHACO</h1>
                             <h2>${entrada.titulo}</h2>
+                            <p><strong>Fecha de Agregado:</strong>${entrada.fecha_agregado}</p>
                             <p>${entrada.comentario}</p>
                         </div>
-                         <div class="seccionImagen">
+                            <div class="seccionImagen">
                             <img src="/uploads/${entrada.imagen}" alt="${entrada.titulo}">
                         </div>
                     </div>

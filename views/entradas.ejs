@@ -15,6 +15,7 @@
                 <th>Título</th>
                 <th>Comentario</th>
                 <th>Imagen</th>
+                <th>Fecha Agregado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
                             <img src="/uploads/<%= entrada.imagen %>" alt="<%= entrada.titulo %>" width="100">
                         <% } %>
                     </td>
+                    <td><%= entrada.fecha_agregado %></td>
                     <td>
                         <a href="/edit/<%= entrada.id %>">Editar</a>
                         <a href="/delete/<%= entrada.id %>" onclick="return confirm('¿Estás seguro de que deseas eliminar esta entrada?');">Eliminar</a>

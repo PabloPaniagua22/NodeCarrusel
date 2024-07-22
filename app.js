@@ -80,16 +80,28 @@ app.get('/entradas', (req, res) => {
 
 // Ruta para procesar el envío de un nuevo formulario de entrada
 app.post('/confirmacion', upload.single('imagen'), (req, res) => {
-  const { titulo, comentario } = req.body;          // Obtiene los datos del formulario
-  const imagen = req.file ? req.file.filename : null;  // Obtiene el nombre del archivo subido
-
-  const sql = 'INSERT INTO entradas (titulo, comentario, imagen) VALUES (?, ?, ?)';  // Consulta SQL para insertar una nueva entrada
-  db.query(sql, [titulo, comentario, imagen], (err, result) => {  // Ejecuta la consulta SQL en la base de datos
+  const { titulo, comentario } = req.body;          
+  const imagen = req.file ? req.file.filename : null;  
+  const sqlInsert = 'INSERT INTO entradas (titulo, comentario, imagen) VALUES (?, ?, ?)';  
+  
+  db.query(sqlInsert, [titulo, comentario, imagen], (err, result) => {  
     if (err) {
-      throw err;  // Maneja errores lanzando una excepción
+      throw err;  
     }
     console.log('Entrada insertada en la base de datos');
-    res.render('confirmacion', { titulo, comentario, imagen });  // Renderiza la página de confirmación con los datos de la entrada
+    const sqlSelect = 'SELECT * FROM entradas WHERE id = ?';
+    db.query(sqlSelect, [result.insertId], (err, rows) => {
+      if (err) {
+        throw err;
+      }
+      const entrada = rows[0];
+      res.render('confirmacion', { 
+        titulo: entrada.titulo, 
+        comentario: entrada.comentario, 
+        imagen: entrada.imagen, 
+        fecha_agregado: entrada.fecha_agregado 
+      });
+    });
   });
 });
 
